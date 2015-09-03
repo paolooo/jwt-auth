@@ -56,14 +56,14 @@ class LumenServiceProvider extends ServiceProvider
      */
     protected function registerAliases()
     {
-        $this->app->alias('tymon.jwt.auth', JWTAuth::class);
-        $this->app->alias('tymon.jwt.provider.jwt', JWT::class);
-        $this->app->alias('tymon.jwt.provider.auth', Auth::class);
-        $this->app->alias('tymon.jwt.provider.storage', Storage::class);
-        $this->app->alias('tymon.jwt.manager', Manager::class);
-        $this->app->alias('tymon.jwt.blacklist', Blacklist::class);
-        $this->app->alias('tymon.jwt.payload.factory', Factory::class);
-        $this->app->alias('tymon.jwt.validators.payload', PayloadValidator::class);
+        $this->app->alias('tymon.jwt.auth', 'Tymon\JWTAuth\JWTAuth');
+        $this->app->alias('tymon.jwt.provider.jwt', 'Tymon\JWTAuth\Contracts\Providers\JWT');
+        $this->app->alias('tymon.jwt.provider.auth', 'Tymon\JWTAuth\Contracts\Providers\Auth');
+        $this->app->alias('tymon.jwt.provider.storage', 'Tymon\JWTAuth\Contracts\Providers\Storage');
+        $this->app->alias('tymon.jwt.manager', 'Tymon\JWTAuth\Manager');
+        $this->app->alias('tymon.jwt.blacklist', 'Tymon\JWTAuth\Blacklist');
+        $this->app->alias('tymon.jwt.payload.factory', 'Tymon\JWTAuth\Factory');
+        $this->app->alias('tymon.jwt.validators.payload', 'Tymon\JWTAuth\Validators\PayloadValidator');
     }
 
     /**

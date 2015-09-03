@@ -27,8 +27,8 @@ class LaravelServiceProvider extends LumenServiceProvider
         $this->publishes([$path => config_path('jwt.php')], 'config');
         $this->mergeConfigFrom($path, 'jwt');
 
-        $this->app['router']->middleware('jwt.auth', GetUserFromToken::class);
-        $this->app['router']->middleware('jwt.refresh', RefreshToken::class);
-        $this->app['router']->middleware('jwt.check', JWTCheck::class);
+        $this->app['router']->middleware('jwt.auth', 'Tymon\JWTAuth\Middleware\GetUserFromToken');
+        $this->app['router']->middleware('jwt.refresh', 'Tymon\JWTAuth\Middleware\RefreshToken');
+        $this->app['router']->middleware('jwt.check', 'Tymon\JWTAuth\Middleware\JWTCheck');
     }
 }
